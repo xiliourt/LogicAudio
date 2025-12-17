@@ -14,6 +14,7 @@ import { filterAudioBuffer, analyzeBpmFromData } from './utils/bpm';
 import { calculateTrackLoudness } from './utils/audioAnalysis';
 import { COLOR_TRACK_A, COLOR_TRACK_B } from './constants';
 import clsx from 'clsx';
+import Footer from './components/Footer';
 
 type ViewMode = 'comparator' | 'analyzer' | 'genre';
 
@@ -779,19 +780,7 @@ const App: React.FC = () => {
       </main>
         
       {/* Footer */}
-      <footer className="w-full py-6 text-center border-t border-slate-800 bg-slate-900/50 backdrop-blur-sm">
-        <p className="text-slate-500 text-sm">
-          Open Source Project. View source on{' '}
-          <a 
-            href="https://github.com/xiliourt/LogicAudio" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-purple-400 hover:text-purple-300 hover:underline transition-colors font-medium"
-          >
-            GitHub
-          </a>
-        </p>
-      </footer>
+      <Footer git="https://github.com/xiliourt/LogicAudio" />
 
       {/* Info Modal */}
       <InfoModal isOpen={isInfoOpen} onClose={() => setIsInfoOpen(false)} />
